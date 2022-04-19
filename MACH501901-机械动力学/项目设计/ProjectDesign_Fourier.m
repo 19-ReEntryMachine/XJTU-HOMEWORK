@@ -1,0 +1,10 @@
+clear;clc;
+syms n t;
+miu=0.1;g=9.80665;m=10;k=100;omega=20;
+f1=-(4*miu*m*g*sin(t*(2*n + 1)))/(pi*(2*n + 1));
+f=symsum(f1,n,0,inf);
+x1=-(4*miu*m*g*sin(t*(2*n + 1)))/(pi*(2*n + 1)*(k-m*(2*n+1).^2));
+x=symsum(x1,n,0,inf);
+fplot(t,f,[0,5]);
+hold on;
+fplot(t,x,[0,5]);
